@@ -4,7 +4,7 @@ import openpyxl
 import os.path
 from os import path
 
-#Definição do menu
+#Definição do Menu
 def Menu(nome_tela, layout):
     janelaM = sg.Window(nome_tela, layout = layout, finalize = True)
     while True:
@@ -118,6 +118,6 @@ while True:
             lista = []
             for rows in rem_plan.iter_rows():
                 lista.append([rows[0].value, rows[1].value, rows[2].value, rows[3].value, rows[4].value])
-            print(lista)
+            lista.sort(key = lambda x:x[1])
             s = '\n'.join([str(i) for i in lista])
             sg.PopupScrolled(*lista, title="Lista de Medicamentos")
