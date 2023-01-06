@@ -20,6 +20,7 @@ layoutM = [
 
 #Interface
 janela = sg.Window("Menu", layoutM)
+
 #Eventos
 while True:
     evento, valores = janela.read()
@@ -36,7 +37,7 @@ while True:
 
             #Seleção de página
             rem_plan = planilha["Remédios"]
-            rem_plan.append(["Medicamento", "Data de Entrada", "Gramatura", "Quantidade"])
+            rem_plan.append(["Medicamento", "Data de Entrada", "Gramatura", "Quantidade", "Validade"])
 
             #Salvar planilha
             planilha.save("Planilha Remédios.xlsx")
@@ -79,6 +80,7 @@ while True:
                 [sg.Text("Data de Entrada"), sg.Input(key = 'entrada')],
                 [sg.Text("Gramatura"), sg.Input(key = "gramatura")],
                 [sg.Text("Quantidade"), sg.Input(key = "quantidade")],
+                [sg.Text("Validade"), sg.Input(key = "validade")],
                 [sg.Button("Salvar")]
             ]
             janelaA = sg.Window("Menu", layoutA)
@@ -87,7 +89,7 @@ while True:
                 if evento == sg.WIN_CLOSED:
                     break
                 if evento == "Salvar":
-                    rem_plan.append([valores["medicação"], valores["entrada"], valores["gramatura"], valores["quantidade"]])
+                    rem_plan.append([valores["medicação"], valores["entrada"], valores["gramatura"], valores["quantidade"], valores["validade"]])
                     #Salvar documento
                     planilha.save("Planilha Remédios.xlsx")
                     janelaA.close()
@@ -115,7 +117,7 @@ while True:
             #Visualização de linhas da planilha
             lista = []
             for rows in rem_plan.iter_rows():
-                lista.append([rows[0].value, rows[1].value, rows[2].value, rows[3].value])
+                lista.append([rows[0].value, rows[1].value, rows[2].value, rows[3].value, rows[4].value])
             print(lista)
             s = '\n'.join([str(i) for i in lista])
             sg.PopupScrolled(*lista, title="Lista de Medicamentos")
