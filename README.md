@@ -63,6 +63,7 @@ O projeto está organizado e estruturado da seguinte maneira:
 ```bash
 ├── app.py
 ├── README.md
+├── .gitignore
 └── dist
       ├── app.exe
       └── Planilha Remédios.xlsx
@@ -84,7 +85,7 @@ Para rodar o projeto, você vai precisar instalar as seguintes ferramentas:
 
     ```bash
     # Clone este repositório
-    $ git clone `https://github.com/AlexandreDinizVeloso/Excel-Py.git`
+    $ git clone https://github.com/AlexandreDinizVeloso/Excel-Py.git
 
     # Acesse a pasta do projeto no terminal/cmd
     $ cd Excel-Py
