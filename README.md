@@ -63,6 +63,7 @@ O projeto está organizado e estruturado da seguinte maneira:
 ```bash
 ├── app.py
 ├── README.md
+├── .gitignore
 └── dist
       ├── app.exe
       └── Planilha Remédios.xlsx
