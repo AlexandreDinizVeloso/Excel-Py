@@ -78,7 +78,7 @@ while True:
                 [sg.Text("Medicação"), sg.Input(key = "medicação")],
                 [sg.Text("Data de Entrada"), sg.Input(key = 'entrada')],
                 [sg.Text("Gramatura"), sg.Input(key = "gramatura")],
-                [sg.Text("Data de Validade"), sg.Input(key = "validade")],
+                [sg.Text("Quantidade"), sg.Input(key = "quantidade")],
                 [sg.Button("Salvar")]
             ]
             janelaA = sg.Window("Menu", layoutA)
@@ -87,7 +87,7 @@ while True:
                 if evento == sg.WIN_CLOSED:
                     break
                 if evento == "Salvar":
-                    rem_plan.append([valores["medicação"], valores["entrada"], valores["gramatura"], valores["validade"]])
+                    rem_plan.append([valores["medicação"], valores["entrada"], valores["gramatura"], valores["quantidade"]])
                     #Salvar documento
                     planilha.save("Planilha Remédios.xlsx")
                     janelaA.close()
